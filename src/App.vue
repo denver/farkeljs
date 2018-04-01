@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <img src="./assets/logo.png">
+    <img id="dice" src="./assets/logo.png">
     <router-view/>
   </div>
 </template>
@@ -20,7 +20,7 @@ export default {
   color: #2c3e50;
   margin-top: 60px;
 }
-img {
+#dice {
   height: 25%;
   width: 25%;
 }
