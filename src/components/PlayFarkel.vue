@@ -1,16 +1,16 @@
 <template>
-  <div class="hello">
+  <div class="farkel">
     <h1>{{ msg }}</h1>
     <h2>Lets' Play</h2>
-    <div id="dice">
-      <p><button @click="rollDice">Roll Dice</button></p>
-    </div>
-    <div id="roll">
-      {{roll}}
-    </div>
     <div id="roll">
       <p><button @click="firstRoll">Roll Dice</button></p>
-      {{theRoll}}
+      <ul>
+        <li v-for="die in theRoll">
+          <p class="dice">
+            {{ die }}
+          </p>
+        </li>
+      </ul>
     </div>
   </div>
 </template>
@@ -21,9 +21,8 @@ export default {
   data() {
     return {
       msg: 'Farkel: A Game of Guts and Luck',
-      roll: 0,
       theRoll: [],
-      //firstRoll: { 1: 0, 2: 0, 3: 0, 4: 0, 5: 0, 6: 0 },
+      dice: [],
       counter: 0,
     };
   },
@@ -37,11 +36,7 @@ export default {
         this.theRoll.push(Math.floor(Math.random() * 6) + 1);
       }
     },
-    rollAny: function () {
-      this.theRoll = [];
-      for ( var i = 0 ; i < 6 ; i++ ) {
-        this.theRoll.push(Math.floor(Math.random() * 6) + 1);
-      }
+    scoreRoll: function () {
     },
   },
 
@@ -64,5 +59,15 @@ li {
 }
 a {
   color: #42b983;
+}
+
+.dice {
+  height: 50px;
+  width: 50px;
+  padding: 25px;
+  margin: 25px auto;
+  border: 1px solid gray;
+  border-radius: 5px;
+  font-size:40px;
 }
 </style>
