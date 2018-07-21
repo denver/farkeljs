@@ -4,6 +4,7 @@
     <h2>Lets' Play</h2>
     <div id="roll">
       <p><button @click="firstRoll">Roll Dice</button></p>
+      <p><button @click="bank">Bank & End Turn</button></p>
       <ul>
         <li v-for="die in theRoll">
           <p class="dice">
@@ -36,7 +37,18 @@ export default {
         this.theRoll.push(Math.floor(Math.random() * 6) + 1);
       }
     },
+    farkelCheck: function (roll) {
+      for (var i = 0; i < roll.length; i++){
+        if (this.roll[i] == 1) {
+          console.log("got one!");
+        }
+        i++;
+      }
+    },
     scoreRoll: function () {
+    },
+    bank: function () {
+
     },
   },
 
