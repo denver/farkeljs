@@ -1,4 +1,6 @@
-# farkeljs
+# farkeljs  
+
+[![Build Status](https://travis-ci.org/denver/farkeljs.svg?branch=master)](https://travis-ci.org/denver/farkeljs/)
 
 > A Vue.js project
 
